@@ -6,7 +6,7 @@ print(f"Original Matrix: {board}")
 m = int(input("Number of rows:"))
 n = int(input("Number of columns:"))
 
-bord=[]
+board=[]
 
 for i in range(m):
     data = []
