@@ -1,12 +1,12 @@
 
-def capturing_using_recursion(r,c,rows,cols): 
+def capture_O(r,c,rows,cols,board): 
         if (r<0 or r==rows or c<0 or c==cols or board[r][c]!="O"):
             return 
         board[r][c]="#"
-        capturing_using_recursion(r+1,c,rows,cols)
-        capturing_using_recursion(r-1,c,rows,cols)
-        capturing_using_recursion(r,c+1,rows,cols)
-        capturing_using_recursion(r,c-1,rows,cols)
+        capture_O(r+1,c,rows,cols,board)
+        capture_O(r-1,c,rows,cols,board)
+        capture_O(r,c+1,rows,cols,board)
+        capture_O(r,c-1,rows,cols,board)
 
 def solve(board):
         rows=len(board) 
@@ -16,7 +16,7 @@ def solve(board):
         for r in range(rows):
             for c in range(cols):
                 if board[r][c]=="O" and (r==0 or r==rows-1 or c==0 or c==cols-1):
-                    capturing_using_recursion(r,c,rows,cols)
+                    capture_O(r,c,rows,cols,board)
 
         #capture remaining  surrounded region(0->X)
         for r in range(1,rows-1):
