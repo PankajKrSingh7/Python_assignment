@@ -38,7 +38,7 @@ if __name__ == '__main__':
     board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
     print(f"Original Matrix: {board}")
  
-    (board)
+    solve(board)
 
     print(f"Matrix After Capture: {board}") 
  
